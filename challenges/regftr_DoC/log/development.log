@@ -1,0 +1,228 @@
+  [1m[35m (58.7ms)[0m  [1m[35mCREATE DATABASE "regftr_development" ENCODING = 'unicode'[0m
+  [1m[35m (47.0ms)[0m  [1m[35mCREATE DATABASE "regftr_test" ENCODING = 'unicode'[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2352089463693337305)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateGift (20200919133147)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "gifts" ("id" bigserial primary key, "description" character varying, "value" integer, "event" character varying, "gift_giver" character varying)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200919133147"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-19 13:40:34.581230"], ["updated_at", "2020-09-19 13:40:34.581230"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2352089463693337305)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.9ms)[0m  [1m[32mINSERT INTO "gifts" ("description", "value", "event", "gift_giver") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "Office Space DVD"], ["value", 4], ["event", "Birthday"], ["gift_giver", "Random Coworker"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("description", "value", "event", "gift_giver") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "Potpourri"], ["value", 4], ["event", "Christmas"], ["gift_giver", "Aunt Tilda"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("description", "value", "event", "gift_giver") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "Scented Peach Candle"], ["value", 9], ["event", "Christmas"], ["gift_giver", "Mom"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("description", "value", "event", "gift_giver") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "Vintage Snuggie"], ["value", 13], ["event", "Name Day"], ["gift_giver", "Weird Neighbor"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2020-09-19 10:05:25 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/neilfreeman/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/neilfreeman/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 14.0ms | Allocations: 409)
+Completed 200 OK in 26ms (Views: 21.8ms | ActiveRecord: 0.0ms | Allocations: 2255)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-09-19 10:05:25 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/gift" for ::1 at 2020-09-19 10:05:29 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/gift"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/gifts" for ::1 at 2020-09-19 10:05:31 -0400
+Processing by GiftsController#index as HTML
+  [1m[36mGift Load (0.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  ↳ app/controllers/gifts_controller.rb:7:in `index'
+Completed 200 OK in 19ms (Views: 8.7ms | ActiveRecord: 7.7ms | Allocations: 4716)
+
+
+Started GET "/gifts" for ::1 at 2020-09-19 10:08:44 -0400
+Processing by GiftsController#index as HTML
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  ↳ app/controllers/gifts_controller.rb:7:in `index'
+Completed 200 OK in 19ms (Views: 9.7ms | ActiveRecord: 7.6ms | Allocations: 4180)
+
+
+Started GET "/gifts/1" for ::1 at 2020-09-19 10:12:14 -0400
+Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:16:in `show'
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 6.0ms | Allocations: 4100)
+
+
+Started POST "/gifts" for ::1 at 2020-09-19 10:29:17 -0400
+Processing by GiftsController#create as */*
+  Parameters: {"song"=>{"title"=>"Song 3", "artist_name"=>"Ryan", "unpermitted"=>true, "record_label"=>"Universal"}, "gift"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 174)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: gift):
+  
+app/controllers/gifts_controller.rb:52:in `gift_params'
+app/controllers/gifts_controller.rb:25:in `create'
+Started POST "/gifts" for ::1 at 2020-09-19 10:33:01 -0400
+Processing by GiftsController#create as */*
+  Parameters: {"song"=>{"title"=>"Song 3", "artist_name"=>"Ryan", "unpermitted"=>true, "record_label"=>"Universal"}, "gift"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 150)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: gift):
+  
+app/controllers/gifts_controller.rb:52:in `gift_params'
+app/controllers/gifts_controller.rb:25:in `create'
+Started POST "/gifts" for ::1 at 2020-09-19 10:37:59 -0400
+Processing by GiftsController#create as */*
+  Parameters: {"gift"=>{"description"=>"Office Space DVD", "value"=>4.19, "event"=>"Birthday", "gift_giver"=>"Coworker"}}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gifts_controller.rb:30:in `create'
+  [1m[36mGift Create (1.1ms)[0m  [1m[32mINSERT INTO "gifts" ("description", "value", "event", "gift_giver") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "Office Space DVD"], ["value", 4], ["event", "Birthday"], ["gift_giver", "Coworker"]]
+  ↳ app/controllers/gifts_controller.rb:30:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gifts_controller.rb:30:in `create'
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 2.3ms | Allocations: 5011)
+
+
+Started POST "/gifts" for ::1 at 2020-09-19 10:39:30 -0400
+Processing by GiftsController#create as */*
+  Parameters: {"gift"=>{"description"=>"Office Space DVD", "value"=>4.19, "event"=>"Birthday", "gift_giver"=>"Coworker"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gifts_controller.rb:30:in `create'
+  [1m[36mGift Create (0.4ms)[0m  [1m[32mINSERT INTO "gifts" ("description", "value", "event", "gift_giver") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "Office Space DVD"], ["value", 4], ["event", "Birthday"], ["gift_giver", "Coworker"]]
+  ↳ app/controllers/gifts_controller.rb:30:in `create'
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gifts_controller.rb:30:in `create'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 4.8ms | Allocations: 2503)
+
+
+Started GET "/gifts" for ::1 at 2020-09-19 10:39:44 -0400
+Processing by GiftsController#index as HTML
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  ↳ app/controllers/gifts_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.6ms | Allocations: 1481)
+
+
+Started POST "/gifts" for ::1 at 2020-09-19 10:40:12 -0400
+Processing by GiftsController#create as */*
+  Parameters: {"gift"=>{"description"=>"Eloquent Javascript", "value"=>14.19, "event"=>"Birthday", "gift_giver"=>"Phil"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gifts_controller.rb:30:in `create'
+  [1m[36mGift Create (0.5ms)[0m  [1m[32mINSERT INTO "gifts" ("description", "value", "event", "gift_giver") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "Eloquent Javascript"], ["value", 14], ["event", "Birthday"], ["gift_giver", "Phil"]]
+  ↳ app/controllers/gifts_controller.rb:30:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gifts_controller.rb:30:in `create'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 2520)
+
+
+Started GET "/gifts" for ::1 at 2020-09-19 10:40:15 -0400
+Processing by GiftsController#index as HTML
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  ↳ app/controllers/gifts_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.4ms | Allocations: 1501)
+
+
+Started PUT "/gifts/7" for ::1 at 2020-09-19 10:45:38 -0400
+Processing by GiftsController#update as */*
+  Parameters: {"gift"=>{"gift_giver"=>"graveSlugPhil"}, "id"=>"7"}
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:38:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gifts_controller.rb:39:in `update'
+  [1m[36mGift Update (0.6ms)[0m  [1m[33mUPDATE "gifts" SET "gift_giver" = $1 WHERE "gifts"."id" = $2[0m  [["gift_giver", "graveSlugPhil"], ["id", 7]]
+  ↳ app/controllers/gifts_controller.rb:39:in `update'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gifts_controller.rb:39:in `update'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 2.0ms | Allocations: 3201)
+
+
+Started GET "/gifts" for ::1 at 2020-09-19 10:45:46 -0400
+Processing by GiftsController#index as HTML
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  ↳ app/controllers/gifts_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.4ms | Allocations: 1503)
+
+
+Started DELETE "/gifts/5" for ::1 at 2020-09-19 10:48:25 -0400
+Processing by GiftsController#destroy as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:44:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gifts_controller.rb:44:in `destroy'
+  [1m[36mGift Destroy (0.4ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/gifts_controller.rb:44:in `destroy'
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gifts_controller.rb:44:in `destroy'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 6.7ms | Allocations: 2498)
+
+
+Started GET "/gifts" for ::1 at 2020-09-19 10:48:29 -0400
+Processing by GiftsController#index as HTML
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  ↳ app/controllers/gifts_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 1416)
+
+
