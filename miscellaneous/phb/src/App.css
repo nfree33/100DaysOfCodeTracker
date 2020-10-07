@@ -6,14 +6,16 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+.logo{
+  background-image: "/pictures/weblayout/phb_logo.jpg"
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
-.App-header {
+.header-test {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;

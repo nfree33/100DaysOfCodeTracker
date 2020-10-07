@@ -7,6 +7,9 @@ function NavBar(props) {
         </li>,
         <li key={2}>
             <a href="/commishreport">Commish Report</a>
+        </li>,
+        <li key={3}>
+            <a href="/teams">Teams</a>
         </li>
     ]
     return (

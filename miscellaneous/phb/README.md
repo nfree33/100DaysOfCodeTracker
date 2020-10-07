@@ -1,3 +1,19 @@
+# The Player Haters Ball
+
+### This is a fun side project that could end up being the home app for The Player Haters Ball, a fantasy basketball league of sick twisted individuals
+
+### Will be adding Rails on the backend with usefull data once the league starts back up
+
+
+
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
